@@ -104,3 +104,18 @@ Stage Summary:
 - سیستم انیمیشن جدید در src/components/portfolio/reveal.tsx — هر گروه فقط یک ناظر با once:true دارد؛ چشمک/پرش/غیب‌شدن بعد از اجرا از بین رفت
 - نوبار مات، شبح‌زدگی محتوای زیر بلور حذف شد
 - web3formsAccessKey هنوز placeholder است — منتظر کلید کاربر
+
+---
+Task ID: 4
+Agent: Z.ai Code (main)
+Task: اصلاح سال به ۱۴۰۵ + افزودن Django به لیست مهارت‌ها
+
+Work Log:
+- site.ts: showcase.year از ۱۴۰۴ به ۱۴۰۵ تغییر کرد
+- site.ts: "Django" بعد از Node.js به آرایه skills اضافه شد (در بخش درباره من + نوار متحرک مهارت‌ها نمایش داده می‌شود)
+- تایید مرورگری: بج ۱۴۰۵، چیپ Django در مهارت‌ها و مارکی (۴ رخداد Django در صفحه)
+- lint پاس، commit a839ff3 و push
+
+Stage Summary:
+- سال پروژه پیکو: ۱۴۰۵
+- مهارت‌ها حالا ۱۲ آیتم شامل Django
