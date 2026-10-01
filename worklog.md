@@ -139,3 +139,20 @@ Stage Summary:
 - فرم تماس با کلید واقعی کاربر فعال شد (تست مرورگری موفق)
 - رفع خطای دیپلوی: wrangler.jsonc با name=portfolio و سلف-رفرنس صحیح اضافه شد؛ پوش جدید باید دیپلوی Cloudflare را سبز کند
 - اگر باز خطای دیپلوی داد: Build command / Deploy command داشبورد Cloudflare باید بررسی شود
+
+---
+Task ID: 6
+Agent: Z.ai Code (main)
+Task: رفع خطای دوم دیپلوی Cloudflare («The entry-point file at .open-next/worker.js was not found»)
+
+Work Log:
+- خطای بایندینگ قبلی رفع شده بود (نشانه: در پوش جدید دیگر خطای 10143 نیامد)؛ خطای جدید یعنی فاز Build خروجی OpenNext (.open-next/worker.js) را نساخته بود — چون build اسکریپت ریپو فقط next build استاندارد بود
+- نصب @opennextjs/cloudflare@1.20.7 به‌عنوان devDependency (به‌همراه باینری opennextjs-cloudflare)
+- package.json: اسکریپت build → «opennextjs-cloudflare build» (خودش next build را اجرا و .open-next را می‌سازد)؛ build قبلی به build:standalone منتقل شد؛ اسکریپت‌های deploy و preview اضافه شدند
+- ساخت open-next.config.ts استاندارد (defineCloudflareConfig({})) — import آن حالا چون devDependency نصب است resolve می‌شود
+- wrangler.jsonc: حذف فیلد $schema (اشاره به فایلی که در CI وجود ندارد؛ برای اطمینان از اینکه ابزارها سراغش نروند)
+- تأیید: باینری v1.20.7 اجرا شد، lint پاس، dev سرور سالم (200)
+
+Stage Summary:
+- ریپو حالا خودکفا است: هر بیلد کامیندی که «npm run build» یا خودِ opennextjs را اجرا کند، .open-next/worker.js را تولید می‌کند
+- اگر باز خطا داد، باید Build/Deploy command دقیق داشبورد Cloudflare دیده شود (مقادیر رسمی پریست Next.js: build = npx @opennextjs/cloudflare@latest build ، deploy = npx @opennextjs/cloudflare@latest deploy)
