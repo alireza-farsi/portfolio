@@ -6,16 +6,15 @@ import { siteConfig } from "@/config/site";
 
 const container = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.14, delayChildren: 2.4 } },
+  show: { transition: { staggerChildren: 0.12, delayChildren: 2.2 } },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 40, filter: "blur(8px)" },
+  hidden: { opacity: 0, y: 36 },
   show: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const },
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 

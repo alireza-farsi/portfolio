@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sprout } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 
 /**
@@ -45,8 +46,15 @@ export default function Navbar() {
           className="group flex items-center gap-2.5"
           aria-label="بازگشت به بالای صفحه"
         >
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-primary to-limeglow text-primary-foreground shadow-lg transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
-            <Sprout className="h-5 w-5" strokeWidth={2.2} />
+          <span className="h-10 w-10 overflow-hidden rounded-xl shadow-lg ring-1 ring-primary/40 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
+            <Image
+              src="/logo.png"
+              alt={`لوگوی ${siteConfig.fullName}`}
+              width={40}
+              height={40}
+              className="h-10 w-10 object-cover"
+              priority
+            />
           </span>
           <span className="text-lg font-extrabold tracking-tight">
             {siteConfig.name}

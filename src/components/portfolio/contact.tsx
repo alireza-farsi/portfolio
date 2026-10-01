@@ -52,8 +52,8 @@ export default function Contact() {
               rel={ch.href.startsWith("http") ? "noopener noreferrer" : undefined}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ delay: i * 0.15, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ delay: i * 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -6 }}
               className={`group glass relative flex items-center gap-5 overflow-hidden rounded-3xl p-6 transition-all duration-500 hover:border-primary/50 ${ch.glow}`}
             >
@@ -87,8 +87,8 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ delay: 0.3, duration: 0.7 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ delay: 0.25, duration: 0.6 }}
             className="glass relative overflow-hidden rounded-3xl p-6"
           >
             <motion.div
@@ -119,8 +119,8 @@ export default function Contact() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ delay: 0.15, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="lg:col-span-3"
         >
           <ContactForm />

@@ -9,7 +9,7 @@ import { siteConfig } from "@/config/site";
 /** شمارنده انیمیشنی */
 function Counter({ value, suffix }: { value: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const inView = useInView(ref, { once: true, amount: 0.5 });
   const [display, setDisplay] = useState(0);
 
   useEffect(() => {
@@ -66,7 +66,7 @@ export default function About() {
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <h3 className="text-2xl font-extrabold leading-snug text-mint md:text-3xl">
@@ -83,8 +83,8 @@ export default function About() {
                 key={f.title}
                 initial={{ opacity: 0, x: 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ delay: i * 0.12, duration: 0.6 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
                 className="group glass flex items-start gap-4 rounded-2xl p-4 transition-all duration-300 hover:border-primary/40 hover:bg-primary/5"
               >
                 <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary/25 to-limeglow/15 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
@@ -105,7 +105,7 @@ export default function About() {
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col gap-6"
         >
@@ -142,8 +142,8 @@ export default function About() {
                   key={skill}
                   initial={{ opacity: 0, scale: 0.6 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05, duration: 0.4 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ delay: i * 0.04, duration: 0.35 }}
                   whileHover={{ scale: 1.08, rotate: -2 }}
                   className="cursor-default rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-sm font-bold text-mint transition-colors hover:border-limeglow/60 hover:bg-primary/20"
                 >

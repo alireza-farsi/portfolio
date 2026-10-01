@@ -51,7 +51,8 @@ prompt
 
 server.log
 # Skills directory
-/skills/.shots/
+/skills/
+.shots/
 download/
 
 # sandbox-specific files

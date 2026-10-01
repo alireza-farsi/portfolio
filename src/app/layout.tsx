@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     "web developer",
   ],
   authors: [{ name: siteConfig.fullName }],
+  icons: {
+    icon: "/logo.png",
+  },
   openGraph: {
     title: `${siteConfig.fullName} | ${siteConfig.role}`,
     description: `نمونه‌کارها و معرفی ${siteConfig.fullName}`,

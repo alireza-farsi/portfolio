@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sprout } from "lucide-react";
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 
 /**
@@ -38,7 +38,14 @@ export default function Preloader() {
               transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
               className="absolute inset-0 rounded-full bg-primary/30 blur-2xl"
             />
-            <Sprout className="relative h-20 w-20 text-primary" strokeWidth={1.4} />
+            <Image
+              src="/logo.png"
+              alt=""
+              width={80}
+              height={80}
+              className="relative h-20 w-20 rounded-3xl shadow-[0_0_60px_oklch(0.78_0.19_150/0.5)]"
+              priority
+            />
           </motion.div>
 
           <motion.p

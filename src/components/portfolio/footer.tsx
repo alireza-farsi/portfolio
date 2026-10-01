@@ -1,6 +1,7 @@
 "use client";
 
-import { Sprout, Github, Phone } from "lucide-react";
+import { Github, Phone } from "lucide-react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 
@@ -14,15 +15,21 @@ export default function Footer() {
     <motion.footer
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.8 }}
       className="relative z-10 mt-auto border-t border-primary/15 bg-[oklch(0.14_0.028_155)]"
     >
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 py-8 pb-[max(2rem,env(safe-area-inset-bottom))] md:flex-row">
         {/* لوگو و نام */}
         <div className="flex items-center gap-2.5">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-primary to-limeglow text-primary-foreground">
-            <Sprout className="h-4.5 w-4.5" strokeWidth={2.2} />
+          <span className="h-9 w-9 overflow-hidden rounded-xl ring-1 ring-primary/40">
+            <Image
+              src="/logo.png"
+              alt={`لوگوی ${siteConfig.fullName}`}
+              width={36}
+              height={36}
+              className="h-9 w-9 object-cover"
+            />
           </span>
           <div>
             <p className="text-sm font-extrabold">{siteConfig.fullName}</p>
