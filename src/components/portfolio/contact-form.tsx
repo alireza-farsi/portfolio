@@ -8,7 +8,7 @@ import { siteConfig } from "@/config/site";
 type Status = "idle" | "loading" | "success" | "error";
 
 const inputClasses =
-  "w-full rounded-xl border border-primary/20 bg-foreground/[0.03] px-4 py-3.5 text-sm text-foreground placeholder:text-foreground/35 outline-none transition-all duration-300 focus:border-primary/60 focus:bg-primary/5 focus:shadow-[0_0_0_4px_oklch(0.78_0.19_150/0.12)]";
+  "w-full rounded-xl border border-primary/20 bg-foreground/[0.03] px-4 py-3.5 text-sm text-foreground placeholder:text-foreground/35 outline-none transition-all duration-300 focus:border-primary/60 focus:bg-primary/5 focus:shadow-[0_0_0_4px_oklch(0.66_0.09_152/0.12)]";
 
 /**
  * فرم تماس با Web3Forms — کلید دسترسی را در src/config/site.ts تنظیم کنید
@@ -153,7 +153,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "loading"}
-          className="group mt-1 inline-flex items-center justify-center gap-2.5 rounded-xl bg-gradient-to-l from-primary to-limeglow px-7 py-4 font-extrabold text-primary-foreground shadow-[0_0_28px_oklch(0.78_0.19_150/0.35)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_44px_oklch(0.78_0.19_150/0.55)] disabled:cursor-not-allowed disabled:opacity-70"
+          className="group mt-1 inline-flex items-center justify-center gap-2.5 rounded-xl bg-gradient-to-l from-primary to-limeglow px-7 py-4 font-extrabold text-primary-foreground shadow-[0_0_28px_oklch(0.66_0.09_152/0.35)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_44px_oklch(0.66_0.09_152/0.4)] disabled:cursor-not-allowed disabled:opacity-70"
         >
           {status === "loading" ? (
             <>

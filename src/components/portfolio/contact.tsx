@@ -14,7 +14,7 @@ const channels = [
     hint: "کدها و پروژه‌های من",
     href: siteConfig.githubUrl,
     ltr: false,
-    glow: "hover:shadow-[0_0_50px_-10px_oklch(0.78_0.19_150/0.5)]",
+    glow: "hover:shadow-[0_0_50px_-10px_oklch(0.66_0.09_152/0.5)]",
   },
   {
     icon: Phone,
@@ -23,7 +23,7 @@ const channels = [
     hint: "همیشه در دسترس",
     href: siteConfig.phoneLink,
     ltr: true,
-    glow: "hover:shadow-[0_0_50px_-10px_oklch(0.84_0.23_125/0.5)]",
+    glow: "hover:shadow-[0_0_50px_-10px_oklch(0.72_0.09_132/0.5)]",
   },
 ];
 
@@ -50,11 +50,10 @@ export default function Contact() {
               href={ch.href}
               target={ch.href.startsWith("http") ? "_blank" : undefined}
               rel={ch.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: i * 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ y: -6 }}
               className={`group glass relative flex items-center gap-5 overflow-hidden rounded-3xl p-6 transition-all duration-500 hover:border-primary/50 ${ch.glow}`}
             >
               <span
@@ -85,7 +84,7 @@ export default function Contact() {
 
           {/* کارت تزئینی هشدار تماس */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ delay: 0.25, duration: 0.6 }}
@@ -117,7 +116,7 @@ export default function Contact() {
 
         {/* فرم */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ delay: 0.15, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}

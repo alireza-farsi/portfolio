@@ -16,9 +16,12 @@ export default function Marquee() {
       aria-hidden="true"
     >
       <div className="rotate-[-1.5deg] border-y border-primary/20 bg-gradient-to-l from-primary/15 via-limeglow/10 to-primary/15 py-5">
-        <div className="flex w-max animate-marquee items-center gap-8 pl-8 [will-change:transform]">
+        <div className="flex w-max animate-marquee items-center [will-change:transform]">
           {items.map((skill, i) => (
-            <span key={`${skill}-${i}`} className="flex items-center gap-8">
+            <span
+              key={`${skill}-${i}`}
+              className="flex items-center gap-8 pl-8"
+            >
               <span className="whitespace-nowrap text-xl font-extrabold text-foreground/85 md:text-2xl">
                 {skill}
               </span>

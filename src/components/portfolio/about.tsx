@@ -64,7 +64,7 @@ export default function About() {
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
         {/* متن معرفی */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
+          initial={{ opacity: 0, x: 24 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -81,7 +81,7 @@ export default function About() {
             {features.map((f, i) => (
               <motion.div
                 key={f.title}
-                initial={{ opacity: 0, x: 40 }}
+                initial={{ opacity: 0, x: 16 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
@@ -103,7 +103,7 @@ export default function About() {
 
         {/* آمار و مهارت‌ها */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -24 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -144,7 +144,6 @@ export default function About() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ delay: i * 0.04, duration: 0.35 }}
-                  whileHover={{ scale: 1.08, rotate: -2 }}
                   className="cursor-default rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-sm font-bold text-mint transition-colors hover:border-limeglow/60 hover:bg-primary/20"
                 >
                   {skill}

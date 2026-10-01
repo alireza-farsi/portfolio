@@ -24,11 +24,11 @@ export default function Projects() {
 
       {/* کارت ویژه پروژه */}
       <motion.article
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="glass group relative grid overflow-hidden rounded-3xl transition-all duration-500 hover:border-primary/50 hover:shadow-[0_24px_80px_-20px_oklch(0.78_0.19_150/0.4)] lg:grid-cols-5"
+        className="glass group relative grid overflow-hidden rounded-3xl transition-all duration-500 hover:border-primary/50 hover:shadow-[0_24px_80px_-20px_oklch(0.66_0.09_152/0.4)] lg:grid-cols-5"
       >
         {/* هاله هاور */}
         <div
@@ -81,7 +81,7 @@ export default function Projects() {
               href={showcase.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-2xl bg-gradient-to-l from-primary to-limeglow px-7 py-3.5 font-extrabold text-primary-foreground shadow-[0_0_28px_oklch(0.78_0.19_150/0.35)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_44px_oklch(0.78_0.19_150/0.55)]"
+              className="inline-flex items-center gap-2.5 rounded-2xl bg-gradient-to-l from-primary to-limeglow px-7 py-3.5 font-extrabold text-primary-foreground shadow-[0_0_28px_oklch(0.66_0.09_152/0.35)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_44px_oklch(0.66_0.09_152/0.4)]"
             >
               مشاهده زنده سایت
               <ExternalLink className="h-4.5 w-4.5" aria-hidden="true" />
@@ -96,7 +96,6 @@ export default function Projects() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ rotate: -1.5, scale: 1.03 }}
             className="w-full max-w-xs overflow-hidden rounded-2xl border border-primary/25 bg-[oklch(0.17_0.032_155)] shadow-[0_20px_60px_-15px_oklch(0_0_0/0.6)]"
             aria-hidden="true"
           >
@@ -141,7 +140,7 @@ export default function Projects() {
       {/* کارت دعوت */}
       <motion.a
         href="#contact"
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}

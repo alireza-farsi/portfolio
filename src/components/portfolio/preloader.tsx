@@ -43,7 +43,7 @@ export default function Preloader() {
               alt=""
               width={80}
               height={80}
-              className="relative h-20 w-20 rounded-3xl shadow-[0_0_60px_oklch(0.78_0.19_150/0.5)]"
+              className="relative h-20 w-20 rounded-3xl shadow-[0_0_60px_oklch(0.66_0.09_152/0.5)]"
               priority
             />
           </motion.div>

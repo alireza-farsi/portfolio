@@ -35,7 +35,7 @@ export default function Navbar() {
       <nav
         className={`flex w-full max-w-3xl items-center justify-between rounded-2xl px-5 py-3 transition-all duration-500 ${
           scrolled
-            ? "glass shadow-[0_8px_40px_-8px_oklch(0.78_0.19_150/0.25)]"
+            ? "glass glass-blur shadow-[0_8px_40px_-8px_oklch(0.66_0.09_152/0.22)]"
             : "border border-transparent bg-transparent"
         }`}
         aria-label="ناوبری اصلی"
@@ -79,7 +79,7 @@ export default function Navbar() {
         {/* دکمه تماس — دسکتاپ */}
         <button
           onClick={() => go("#contact")}
-          className="hidden rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground shadow-[0_0_20px_oklch(0.78_0.19_150/0.35)] transition-all hover:shadow-[0_0_32px_oklch(0.78_0.19_150/0.55)] hover:brightness-110 md:block"
+          className="hidden rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground shadow-[0_0_20px_oklch(0.66_0.09_152/0.35)] transition-all hover:shadow-[0_0_32px_oklch(0.66_0.09_152/0.4)] hover:brightness-110 md:block"
         >
           بیا صحبت کنیم ✦
         </button>
