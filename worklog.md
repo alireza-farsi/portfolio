@@ -35,3 +35,29 @@ Stage Summary:
 - نکته مهم: کلید Web3Forms placeholder است؛ کاربر باید `web3formsAccessKey` را در `src/config/site.ts` عوض کند
 - نکته امنیتی: توکن گیت‌هاب کاربر در چت/لاگ دیده شده — توصیه به revoke پس از استفاده
 - نام/متن‌ها placeholder قابل ویرایش در `src/config/site.ts`
+
+---
+Task ID: 2
+Agent: Z.ai Code (main agent)
+Task: شخصی‌سازی سایت (نام واقعی، آمار، نمونه‌کار پیکو)، ساخت لوگو، رفع باگ انیمیشن، پوش مجدد
+
+Work Log:
+- خواندن peakoedu.ir با page_reader: «پیکو؛ مسیر آموزشی تخصصی برای المپیادهای هوش‌مصنوعی و اقتصاد، با دوره‌های جامع، کلاس‌های زنده و فضای یادگیری اختصاصی» (ساخته‌شده با Next.js)
+- تولید لوگوی سبز (جوانه با دو برگ روی پس‌زمینه سبز تیره) با image-generation → public/logo.png
+- بروزرسانی src/config/site.ts: fullName «سید علیرضا حسینی نسب»، name «علیرضا» (بدون نیم‌فاصله)، role «توسعه‌دهنده وب»، stats (۱ نمونه‌کار / ۳ ماه تجربه / ۱۰۰٪ اشتیاق)، متن درباره من جدید، جایگزینی projects با showcase واقعی پیکو
+- بازطراحی projects.tsx: کارت ویژه showcase با بج «نمونه‌کار واقعی»، دامنه، نقش، تگ‌ها، دکمه «مشاهده زنده سایت» + ماکاپ مرورگر با لوگو + کارت دعوت «جای نمونه‌کار بعدی اینجاست…»
+- جایگذاری لوگو در navbar، footer، preloader (با next/image) و فاوآیکون layout.tsx
+- رفع باگ انیمیشن اسکرول (گزارش کاربر: تریگر قبل/بعد از رسیدن به المان و گیر کردن):
+  - جایگزینی viewport margin با amount در همه کامپوننت‌ها (hero/heading/about/projects/contact/footer)
+  - حذف filter blur از variants هرو (منبع jank)
+  - حذف backdrop-blur از marquee + will-change:transform
+  - کاهش delayChildren هرو به 2.2 و کوتاه‌کردن مدت انیمیشن‌ها
+- تست با agent-browser: hero/پیکو/دعوت/درباره من/تماس اسکرین‌شات، اسکرول کامل smooth تا انتها، کنسول بدون خطا و هشدار
+- فیکس gitignore: خط `.shots/` به `/skills/` چسبیده بود (sed جدا شد)؛ حذف .shots از tracking با git rm --cached + amend
+- پوش با توکن one-off (توکن ذخیره نشد در remote) → commit a4decfa روی main
+
+Stage Summary:
+- سایت کاملاً شخصی‌سازی‌شده با اطلاعات واقعی کاربر و لوگوی اختصاصی
+- انیمیشن‌های اسکرول حالا با amount تریگر می‌شوند (قابل پیش‌بینی و بدون گیر)
+- ریپو: https://github.com/alireza-farsi/portfolio — آخرین کامیت a4decfa
+- یادآوری: کلید Web3Forms همچنان placeholder است در src/config/site.ts
