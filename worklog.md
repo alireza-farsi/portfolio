@@ -119,3 +119,23 @@ Work Log:
 Stage Summary:
 - سال پروژه پیکو: ۱۴۰۵
 - مهارت‌ها حالا ۱۲ آیتم شامل Django
+
+---
+Task ID: 5
+Agent: Z.ai Code (main)
+Task: جایگذاری کلید Web3Forms + رفع خطای دیپلوی Cloudflare Workers (بایندینگ WORKER_SELF_REFERENCE)
+
+Work Log:
+- کلید Web3Forms کاربر در src/config/site.ts تنظیم شد (web3formsAccessKey) — حالت «کلید تنظیم نشده» فرم خودبه‌خود حذف می‌شود
+- تحلیل خطای دیپلوی Cloudflare: بایندینگ سرویس WORKER_SELF_REFERENCE به worker «nextjs-tailwind-shadcn-ts» (نام قدیمی قالب) اشاره می‌کرد که در اکانت وجود ندارد [code: 10143]؛ این رشته هیچ‌جا در ریپو نبود → منبع خطا کانفیگ تولید خودکار/داشبورد بود
+- ساخت wrangler.jsonc در ریشه ریپو: name=portfolio، main=.open-next/worker.js، assets (.open-next/assets + binding ASSETS)، compatibility nodejs_compat، و سرویس‌بایندینگ WORKER_SELF_REFERENCE → portfolio (سلف-رفرنس صحیح) — کانفیگ صریح ریپو جایگزین بایندینگ‌های داشبورد می‌شود
+- .gitignore: افزودن /.open-next/ و /.wrangler/
+- تحقیق Web3Forms: درخواست سمت‌سرور (curl) با 403 «Use our API in client side (Pro plan is required)» رد می‌شود → مسیر درست همان fetch مستقیم مرورگر است (پیاده‌سازی فعلی فرم درست بود)
+- تست E2E فرم با شبیه‌سازی UA مرورگر واقعی (device emulation): OPTIONS 200 → POST 200 → دکمه «ارسال شد ✓» — کلید معتبر و فرم کاملاً فعال است (403 قبلی فقط مال مرورگر headless سندباکس بود که WAF وب‌۳فرمز ردش می‌کند)
+- lint پاس؛ اسکرین‌شات دسکتاپ 1440 و موبایل 390؛ کنسول بدون خطا؛ دو ایمیل تست برای کاربر ارسال شد
+- پوش به main → Workers Builds با wrangler.jsonc جدید دوباره بیلد می‌شود
+
+Stage Summary:
+- فرم تماس با کلید واقعی کاربر فعال شد (تست مرورگری موفق)
+- رفع خطای دیپلوی: wrangler.jsonc با name=portfolio و سلف-رفرنس صحیح اضافه شد؛ پوش جدید باید دیپلوی Cloudflare را سبز کند
+- اگر باز خطای دیپلوی داد: Build command / Deploy command داشبورد Cloudflare باید بررسی شود

@@ -1,0 +1,25 @@
+// ─────────────────────────────────────────────────────────────
+//  Cloudflare Workers deploy config — @opennextjs/cloudflare
+//  نکته مهم: بایندینگ WORKER_SELF_REFERENCE باید دقیقاً به همین
+//  ورکر (name) اشاره کند؛ در غیر این صورت خطای 10143 می‌دهد.
+// ─────────────────────────────────────────────────────────────
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "portfolio",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-03-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "portfolio"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

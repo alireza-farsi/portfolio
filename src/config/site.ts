@@ -18,8 +18,8 @@ export const siteConfig = {
   githubUsername: "alireza-farsi",
   githubUrl: "https://github.com/alireza-farsi",
 
-  // ✏️ کلید Web3Forms — بعد از دریافت کلید، فقط همین خط را عوض کنید
-  web3formsAccessKey: "YOUR_WEB3FORMS_ACCESS_KEY_HERE",
+  // ✏️ کلید Web3Forms — فعال ✅
+  web3formsAccessKey: "4bcd952e-f1d2-4282-ae90-1f69ea88094b",
 
   // درباره من
   aboutTitle: "تازه اول راهم، ولی سرعتم کم نیست 🌿",

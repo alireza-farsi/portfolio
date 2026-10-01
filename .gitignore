@@ -55,6 +55,10 @@ server.log
 .shots/
 download/
 
+# cloudflare
+/.open-next/
+/.wrangler/
+
 # sandbox-specific files
 .zscripts/
 skills/
