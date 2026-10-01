@@ -60,44 +60,44 @@
   --animate-grow: grow 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-/* ───────────── Muted Forest Palette ───────────── */
+/* ───────────── Green Forest Palette ───────────── */
 :root {
   --radius: 1rem;
-  --background: oklch(0.15 0.018 155);
-  --foreground: oklch(0.9 0.012 150);
-  --card: oklch(0.2 0.022 155);
-  --card-foreground: oklch(0.9 0.012 150);
-  --popover: oklch(0.19 0.02 155);
-  --popover-foreground: oklch(0.9 0.012 150);
-  --primary: oklch(0.66 0.09 152);
-  --primary-foreground: oklch(0.16 0.025 155);
-  --secondary: oklch(0.24 0.026 152);
-  --secondary-foreground: oklch(0.9 0.012 150);
-  --muted: oklch(0.23 0.024 152);
-  --muted-foreground: oklch(0.68 0.025 152);
-  --accent: oklch(0.28 0.035 152);
-  --accent-foreground: oklch(0.9 0.012 150);
-  --destructive: oklch(0.6 0.16 25);
-  --border: oklch(0.66 0.09 152 / 15%);
-  --input: oklch(0.66 0.09 152 / 19%);
-  --ring: oklch(0.66 0.09 152 / 50%);
-  --leaf: oklch(0.66 0.09 152);
-  --leaf-light: oklch(0.74 0.07 142);
-  --mint: oklch(0.78 0.05 158);
-  --limeglow: oklch(0.72 0.09 132);
-  --chart-1: oklch(0.66 0.09 152);
-  --chart-2: oklch(0.72 0.09 132);
-  --chart-3: oklch(0.74 0.07 142);
-  --chart-4: oklch(0.58 0.08 165);
-  --chart-5: oklch(0.78 0.05 158);
-  --sidebar: oklch(0.19 0.02 155);
-  --sidebar-foreground: oklch(0.9 0.012 150);
-  --sidebar-primary: oklch(0.66 0.09 152);
-  --sidebar-primary-foreground: oklch(0.16 0.025 155);
-  --sidebar-accent: oklch(0.28 0.035 152);
-  --sidebar-accent-foreground: oklch(0.9 0.012 150);
-  --sidebar-border: oklch(0.66 0.09 152 / 15%);
-  --sidebar-ring: oklch(0.66 0.09 152 / 50%);
+  --background: oklch(0.16 0.03 155);
+  --foreground: oklch(0.95 0.02 145);
+  --card: oklch(0.21 0.035 155);
+  --card-foreground: oklch(0.95 0.02 145);
+  --popover: oklch(0.19 0.03 155);
+  --popover-foreground: oklch(0.95 0.02 145);
+  --primary: oklch(0.78 0.19 150);
+  --primary-foreground: oklch(0.17 0.04 155);
+  --secondary: oklch(0.25 0.045 152);
+  --secondary-foreground: oklch(0.95 0.02 145);
+  --muted: oklch(0.24 0.035 155);
+  --muted-foreground: oklch(0.72 0.04 150);
+  --accent: oklch(0.3 0.06 152);
+  --accent-foreground: oklch(0.95 0.02 145);
+  --destructive: oklch(0.62 0.2 25);
+  --border: oklch(0.78 0.19 150 / 18%);
+  --input: oklch(0.78 0.19 150 / 22%);
+  --ring: oklch(0.78 0.19 150 / 60%);
+  --leaf: oklch(0.78 0.19 150);
+  --leaf-light: oklch(0.88 0.16 135);
+  --mint: oklch(0.9 0.11 160);
+  --limeglow: oklch(0.84 0.23 125);
+  --chart-1: oklch(0.78 0.19 150);
+  --chart-2: oklch(0.84 0.23 125);
+  --chart-3: oklch(0.88 0.16 135);
+  --chart-4: oklch(0.65 0.15 165);
+  --chart-5: oklch(0.9 0.11 160);
+  --sidebar: oklch(0.19 0.03 155);
+  --sidebar-foreground: oklch(0.95 0.02 145);
+  --sidebar-primary: oklch(0.78 0.19 150);
+  --sidebar-primary-foreground: oklch(0.17 0.04 155);
+  --sidebar-accent: oklch(0.3 0.06 152);
+  --sidebar-accent-foreground: oklch(0.95 0.02 145);
+  --sidebar-border: oklch(0.78 0.19 150 / 18%);
+  --sidebar-ring: oklch(0.78 0.19 150 / 60%);
 }
 
 @layer base {
@@ -112,27 +112,27 @@
     scroll-behavior: smooth;
   }
   ::selection {
-    background: oklch(0.66 0.09 152 / 70%);
-    color: oklch(0.16 0.025 155);
+    background: oklch(0.78 0.19 150 / 85%);
+    color: oklch(0.17 0.04 155);
   }
   /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: oklch(0.15 0.018 155);
+    background: oklch(0.16 0.03 155);
   }
   ::-webkit-scrollbar-thumb {
     background: linear-gradient(
       180deg,
-      oklch(0.66 0.09 152 / 55%),
-      oklch(0.52 0.07 155 / 55%)
+      oklch(0.78 0.19 150 / 70%),
+      oklch(0.6 0.15 155 / 70%)
     );
     border-radius: 999px;
-    border: 2px solid oklch(0.15 0.018 155);
+    border: 2px solid oklch(0.16 0.03 155);
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: oklch(0.72 0.09 132 / 70%);
+    background: oklch(0.84 0.23 125 / 90%);
   }
 }
 
@@ -175,10 +175,10 @@
 @keyframes pulse-glow {
   0%,
   100% {
-    box-shadow: 0 0 24px 0 oklch(0.66 0.09 152 / 18%);
+    box-shadow: 0 0 24px 0 oklch(0.78 0.19 150 / 25%);
   }
   50% {
-    box-shadow: 0 0 56px 6px oklch(0.66 0.09 152 / 32%);
+    box-shadow: 0 0 64px 8px oklch(0.78 0.19 150 / 45%);
   }
 }
 
@@ -232,7 +232,7 @@
 /* Dotted grid background */
 .grid-dots {
   background-image: radial-gradient(
-    oklch(0.66 0.09 152 / 10%) 1.2px,
+    oklch(0.78 0.19 150 / 12%) 1.2px,
     transparent 1.2px
   );
   background-size: 34px 34px;
@@ -242,10 +242,10 @@
 .text-gradient-leaf {
   background: linear-gradient(
     120deg,
-    oklch(0.74 0.07 142),
-    oklch(0.66 0.09 152),
-    oklch(0.72 0.09 132),
-    oklch(0.74 0.07 142)
+    oklch(0.88 0.16 135),
+    oklch(0.78 0.19 150),
+    oklch(0.84 0.23 125),
+    oklch(0.88 0.16 135)
   );
   background-size: 220% auto;
   -webkit-background-clip: text;
@@ -256,8 +256,8 @@
 
 /* Glass card — بدون backdrop-filter تا انیمیشن‌ها روان بمانند */
 .glass {
-  background: oklch(0.21 0.024 152 / 72%);
-  border: 1px solid oklch(0.66 0.09 152 / 14%);
+  background: oklch(0.24 0.04 152 / 62%);
+  border: 1px solid oklch(0.78 0.19 150 / 16%);
 }
 
 /* نسخه با بلور — فقط برای عناصر ثابت کوچک مثل نوبار */
@@ -268,7 +268,7 @@
 
 /* Outline text for big typography */
 .text-stroke {
-  -webkit-text-stroke: 1.5px oklch(0.66 0.09 152 / 28%);
+  -webkit-text-stroke: 1.5px oklch(0.78 0.19 150 / 35%);
   color: transparent;
 }
 

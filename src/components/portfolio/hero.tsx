@@ -119,7 +119,7 @@ export default function Hero() {
         >
           <button
             onClick={() => go("#projects")}
-            className="group w-full rounded-2xl bg-gradient-to-l from-primary to-limeglow px-8 py-4 text-base font-extrabold text-primary-foreground shadow-[0_0_32px_oklch(0.66_0.09_152/0.4)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_48px_oklch(0.66_0.09_152/0.45)] sm:w-auto"
+            className="group w-full rounded-2xl bg-gradient-to-l from-primary to-limeglow px-8 py-4 text-base font-extrabold text-primary-foreground shadow-[0_0_32px_oklch(0.78_0.19_150/0.4)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_48px_oklch(0.78_0.19_150/0.6)] sm:w-auto"
           >
             دیدن نمونه کارها
             <span className="mr-2 inline-block transition-transform duration-300 group-hover:-translate-x-1.5">
