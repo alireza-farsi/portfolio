@@ -156,3 +156,22 @@ Work Log:
 Stage Summary:
 - ریپو حالا خودکفا است: هر بیلد کامیندی که «npm run build» یا خودِ opennextjs را اجرا کند، .open-next/worker.js را تولید می‌کند
 - اگر باز خطا داد، باید Build/Deploy command دقیق داشبورد Cloudflare دیده شود (مقادیر رسمی پریست Next.js: build = npx @opennextjs/cloudflare@latest build ، deploy = npx @opennextjs/cloudflare@latest deploy)
+
+---
+Task ID: 7
+Agent: Z.ai Code (main)
+Task: رفع حلقه بی‌نهایت در بیلد Cloudflare (bun run build ↔ opennextjs-cloudflare build)
+
+Work Log:
+- لاگ CI نشان داد بیلد در حلقه بی‌نهایت است: `bun run build` → `opennextjs-cloudflare build` → فاز «Building Next.js app» دوباره اسکریپت build پروژه را اجرا می‌کرد → بازگشت به خودش (~۳۵+ تکرار، هرکدام ۱.۴ ثانیه)
+- ریشه‌یابی از سورسِ نسخه نصب‌شده (1.20.7): در `@opennextjs/aws/dist/build/buildNextApp.js` تابع buildNextjsApp دستور build را از `config.buildCommand ?? "<packager> run build"` می‌گیرد؛ یعنی پیش‌فرضش اجرای اسکریپت build خود پروژه است
+- `defineCloudflareConfig` فیلد buildCommand را پاس نمی‌دهد (فقط incrementalCache/tagCache/queue/…) → با spread به کانفیگ اضافه شد
+- open-next.config.ts: خروجی defineCloudflareConfig با `buildCommand: "next build"` ادغام شد — حالا فاز build اپ، مستقیماً `next build` را اجرا می‌کند و حلقه از بین می‌رود
+- wrangler.jsonc: compatibility_date از 2025-03-01 به 2026-06-01 ارتقا یافت (رفع هشدار WARN در لاگ CI؛ wrangler 4.146.0 نصب است)
+- تأیید از تایپ‌های رسمی: buildCommand آپشن مستند سطح‌بالای OpenNextConfig است
+- lint پاس (بدون warning)، dev سرور سالم
+- پوش → Workers Builds دوباره بیلد می‌گیرد
+
+Stage Summary:
+- حلقه بی‌نهایت بیلد با راه‌حل رسمی (buildCommand در open-next.config.ts) رفع شد
+- زنجیره کامل CI: bun run build → opennextjs build (next build داخلش) → .open-next/worker.js → wrangler deploy (بایندینگ صحیح) → باید سبز شود
