@@ -61,3 +61,21 @@ Stage Summary:
 - انیمیشن‌های اسکرول حالا با amount تریگر می‌شوند (قابل پیش‌بینی و بدون گیر)
 - ریپو: https://github.com/alireza-farsi/portfolio — آخرین کامیت a4decfa
 - یادآوری: کلید Web3Forms همچنان placeholder است در src/config/site.ts
+
+---
+Task ID: 3
+Agent: Z.ai Code (main agent)
+Task: پالت ملایم‌تر (کاهش زنندگی رنگ‌ها) + رفع پرش وسط انیمیشن + پوش
+
+Work Log:
+- بازنویسی :root در globals.css با پالت Muted Forest: primary از oklch(0.78 0.19 150) → (0.66 0.09 152)، limeglow از (0.84 0.23 125) → (0.72 0.09 132)، mint روشنایی کمتر، foreground/background کمی تیره‌تر
+- sed رنگ‌های هاردکد در ۸ فایل کامپوننت (فرم space و underscore) + کاهش آلفای glow (0.55→0.4، 0.6→0.45) + رنگ نشانگر ماوس rgba(101,175,132,…)
+- ریشه‌یابی پرش وسط انیمیشن: (۱) تداخل whileHover transform با whileInView ورودی → حذف whileHover از کارت‌های تماس/چیپ‌های مهارت/ماکاپ مرورگر؛ (۲) backdrop-filter:blur(18px) روی ~۱۵ کارت انیمیشنی → کلاس glass حالا بدون blur (bg نیمه‌شفاف 72%) و blur فقط برای نوبار با کلاس جدید glass-blur؛ (۳) کاهش دامنه حرکت ورودی‌ها (y/x از 30-50 → 16-24) برای ظاهر آرام‌تر
+- رفع درز حلقه marquee: انتقال فاصله‌گذاری داخل آیتم‌ها (pl-8 در هر آیتم، حذف gap-8 بیرونی) تا دو نیمه ترک دقیقاً یکسان باشند
+- تست با agent-browser: اسکرول تدریجی smooth از بالا تا پایین با اسکرین‌شات در مراحل مختلف — همه المان‌ها به حالت نهایی رسیدند (بدون گیر)، کنسول بدون خطا (فقط یک warning جزئی LCP)، موبایل هم چک شد
+- پوش: commit 44d7ab9 روی main
+
+Stage Summary:
+- تم حالا «سبز جنگلی مات و شیک» است، نه نئونی
+- انیمیشن‌ها سبک‌تر: بدون تداخل hover، بدون blur سنگین روی کارت‌ها، دامنه کمتر
+- ریپو به‌روز: https://github.com/alireza-farsi/portfolio
